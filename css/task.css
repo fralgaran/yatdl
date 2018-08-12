@@ -1,0 +1,197 @@
+:root {
+	--complete-button-bg-color-open: green;
+	--complete-button-bg-color: brown;
+	--font-color: #ccc;
+}
+
+body{
+	background: #22406E;
+}
+*{
+	font-family: 'Varela Round', sans-serif;
+	color: var(--font-color);
+	font-size: 14px;
+}
+h1{
+	text-transform: uppercase;
+	font-size: 20px;
+	text-align: center;
+}
+body > div{
+	margin: 100px auto 0 auto;
+}
+.background-layer{
+	background: #F3F3F3;
+	width: 375px;
+   
+}
+.deg1{
+	-ms-transform: rotate(1deg); /* IE 9 */
+  -webkit-transform: rotate(1deg); /* Safari */
+  transform: rotate(1deg);
+}
+.deg2{
+	-ms-transform: rotate(2deg); /* IE 9 */
+    -webkit-transform: rotate(2deg); /* Safari */
+    transform: rotate(2deg);
+}
+.content-layer{
+	-ms-transform: rotate(-4deg); /* IE 9 */
+    -webkit-transform: rotate(-4deg); /* Safari */
+    transform: rotate(-4deg);
+    padding: 20px 2px 20px 2px;
+    background:transparent;
+}
+#task-table{
+	margin: 0 auto;
+	width: 98%;
+	position: relative;
+	border-collapse: collapse;
+}
+button.remove{
+	color: red;
+	cursor: pointer;
+	visibility: hidden;
+	font-size: 18px;
+	border: none;
+	background: transparent;
+}
+button.remove:hover{
+	font-weight: bold;
+}
+.trow{
+	height: 50px;
+}
+.trow:hover .tcell:last-child button{
+	visibility: visible;
+}
+
+.trow:last-child .tcell:last-child{
+	width: 0;	
+}
+.trow:last-child .tcell{
+	border-bottom: 1px;
+	border-color: #ccc;
+	border-style: solid;
+}
+.trow[data-complete="true"] td.tcell span {
+	text-decoration: line-through;
+}
+button {
+	cursor: pointer;
+}
+button.complete {
+	width: 20px;
+	height:20px;
+	text-indent: -9999px;
+	border-radius: 50%;
+	background-color: var(--complete-button-bg-color-open);
+}
+.trow[data-complete="true"] .tcell button.complete {
+	background-color: var(--complete-button-bg-color);
+}
+.tcell{
+	border-top: 1px;
+	border-bottom: 0px;
+	border-right: 0px;
+	border-left: 0px;
+	border-color: #ccc;
+	border-style: solid;
+	vertical-align: middle;
+	word-wrap: break-word;
+	word-break: break-all;
+	padding: .4rem;
+}
+.tcell:first-child{
+	border-top: 1px;
+	border-bottom: 0px;
+	border-right: 1px;
+	border-left: 0px;
+	border-right-color: orange;
+	border-style: solid;
+	text-align: center;
+	width: 75px;
+}
+.tcell:last-child{
+	width: 25px;
+}
+input[type="text"]{
+	border: 0;
+	width: 285px;
+	height: 50px;
+	line-height:26px;
+	padding: 2px 6px;
+	background:#F9F9F9;
+	/*not recommended to do this*/
+	outline: none;
+	
+	font-size: 1em;
+	font-weight: normal;
+}
+input[type="text"]:focus{
+	background: #fff;
+	color: #737070;
+}
+input[type="text"]::placeholder {
+	color:var(--font-color);
+}
+span.todo-text{
+	display: block;
+	padding: 2px 6px;
+	width: 255px;
+	overflow:hidden; 
+  white-space:nowrap; 
+	text-overflow: ellipsis;
+	color:#737070;	
+}
+
+/* custom "radio" */
+.background-circle {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border: 1px solid #ccc;
+	position: relative;
+	display:inline-block;
+	margin: 4px auto 0 auto;
+}
+
+
+.inner-circle{
+	  width: 16px;
+	  height: 16px;
+	  background: #efefef;
+	  position: absolute;
+	  top: 9%;
+	  left: 10%;
+	  display: block;
+	  border-radius: 50%;
+	  cursor: pointer;
+}
+.inner-circle.active{
+	background: green;
+}
+#buttons{
+	margin: 10px 0;
+	text-align:center;
+}
+#buttons > .btn{
+	display :inline-block;
+	padding: 6px;
+	font-size: 10px;
+	text-transform: uppercase;
+	margin-right: 10px;
+	color: #737070;
+}
+#buttons > .btn{
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 6px 20px;
+}
+#buttons > 	.btn.active{
+	background: #ccc;
+	color: #737070;
+	cursor: default;
+}
